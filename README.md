@@ -46,7 +46,7 @@ This project is part of my **Data Analytics Bootcamp** coursework. It focuses on
 ### Deliverable 2: Scrape and Analyze Mars Weather Data
 - **Tool Used**: Jupyter Notebook (`part_2_mars_weather.ipynb`)
 - **Objective**: Scrape weather data from the Mars temperature table.
-- **Output**: Pandas DataFrame containing Mars weather data, visualizations, and an exported CSV file in the output folder.
+- **Output**: Pandas DataFrame containing Mars weather data, visualizations, and exported CSV and PNG files in the output folder.
 
 ---
 
@@ -125,6 +125,7 @@ Ensure you have the following dependencies installed:
 4. **Visualize Data**:
    - Create bar charts for temperature and pressure analyses.
    - Plot minimum daily temperatures to estimate the length of a Martian year.
+   - Save all charts as PNG files to the output folder.
 
 5. **Export Results**:
    - Save the DataFrame to a CSV file in the output folder.
@@ -156,6 +157,8 @@ This daily granularity provides a detailed and consistent chronological view of 
 
 The visualization of monthly averages reveals distinct seasonal temperature trends. The coldest temperatures during Month 3 align with the peak of Martian winter, while the warmer temperatures in Month 8 reflect the Martian summer in the southern hemisphere. These patterns provide a clear depiction of Mars' seasonal cycle.
 
+![Average Minimum Temperature by Month](output/mars_average_min_temp_by_month.png)
+
 ### 4. Which months have the lowest and highest atmospheric pressure on Mars?
 
 #### Workflow:
@@ -168,6 +171,8 @@ The visualization of monthly averages reveals distinct seasonal temperature tren
 - **Highest Pressure Month**: Month 9, averaging around 911 Pa.
 
 These pressure trends are closely tied to the sublimation and condensation of CO2 at Mars' poles. The low pressure in Month 6 coincides with significant CO2 condensation during winter, while the high pressure in Month 9 reflects CO2 sublimation as temperatures rise. This seasonal exchange of atmospheric CO2 contributes to the dynamic atmospheric behavior observed on Mars.
+
+![Average Atmospheric Pressure by Month](output/mars_average_pressure_by_month.png)
 
 ### 5. How many terrestrial days exist in a Martian year?
 
@@ -182,6 +187,8 @@ These pressure trends are closely tied to the sublimation and condensation of CO
 
 This method leveraged a column derived from the terrestrial_date data column called `days_since_start` to pinpoint the coldest Martian days, marking the peak of winter. By measuring the intervals between these points, I accurately calculated the Martian year length while visualizing the seasonal cycle through temperature trends.
 
+![Daily Minimum Temperature with Highlighted Winters](output/mars_winter_ranges.png)
+
 ---
 
 ## Project Folder Structure
@@ -190,8 +197,12 @@ This method leveraged a column derived from the terrestrial_date data column cal
 html_web_scraping_challenge/
 ├── part_1_mars_news.ipynb     # Notebook for scraping Mars news titles and previews
 ├── part_2_mars_weather.ipynb  # Notebook for scraping and analyzing Mars weather data
-├── output/                    # Folder containing exported CSV file
-│   └── mars_weather.csv       # Exported weather data in CSV format
+├── output/                    # Folder containing exported results
+│   ├── mars_weather.csv       # Exported weather data in CSV format
+│   ├── mars_winter_ranges.png # Chart showing highlighted Martian winters
+│   ├── mars_daily_min_temp.png # Daily minimum temperature plot
+│   ├── mars_average_pressure_by_month.png # Average pressure chart
+│   └── mars_average_min_temp_by_month.png # Average temperature chart
 ├── README.md                  # Project README file
 ```
 
